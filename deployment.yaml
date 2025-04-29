@@ -1,0 +1,17 @@
+apiVersion: app/v1
+kind: deployment
+metadata: 
+name: example-demo
+spec:
+  replicas: 3
+  selector:
+    metadata:
+      app:  example-demo
+  templet: 
+    lables:
+      matchLabels:
+        app: example-demo
+  spec:
+    image: 
+    container: 80
+    port: 8080
