@@ -1,2 +1,4 @@
 apiversion: v1
 kind: service
+metadata: 
+  name: service-exam
