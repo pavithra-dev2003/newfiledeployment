@@ -4,7 +4,7 @@ on:
     branches:
       - main
 jobs:
-  builds:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,6 +16,7 @@ jobs:
          node-version: 17
       - name: install dependency
         run: npm install
+        working-directory: nodejs
       - name: login to docker hub
         uses: docker/login-actions@v2
         with:
