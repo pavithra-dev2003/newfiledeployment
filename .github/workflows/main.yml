@@ -26,9 +26,9 @@ jobs:
         with:
           context: nodejs
           file: nodejs/Dockerfile
-          pus: true
+          push: true
           tags: |
-            ${{ secrets.DOCKER_USERNAME }}/nodeex:${{ github run_number }}
+            ${{ secrets.DOCKER_USERNAME }}/nodeex:${{ github.run_number }}
 
       - name: Docker logout
         run: docker logout
