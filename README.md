@@ -51,6 +51,7 @@ Builds Docker image from nodejs/Dockerfile
 Pushes image to Docker Hub
 
 Workflow file:
+```
 name: build and push 
 on:
   push:
@@ -90,8 +91,10 @@ jobs:
 
       - name: Docker logout
         run: docker logout
+```
 
-Dockerfile
+### Dockerfile
+```
 #Use an official Node.js image as the base image
 
 FROM node:18-alpine 
@@ -119,19 +122,17 @@ EXPOSE 3000
 #Run the application
 
 CMD ["npm", "start"]
+```
 
-GitHub Secrets Required
 
-DOCKER_USERNAME → Your Docker Hub username
+### GitHub Secrets Required
+* DOCKER_USERNAME → Your Docker Hub username 
 
-DOCKER_PASSWORD → Your Docker Hub password / access token
+* DOCKER_PASSWORD → Your Docker Hub password / access token 
 
-Docker Image Naming
+* Docker Image Naming 
 
-Images will be pushed to Docker Hub as:
-
-<docker_username>/nodeex:<github_run_number>
-
+* Images will be pushed to Docker Hub as: <docker_username>/nodeex:<github_run_number> 
 
 Example:
 
